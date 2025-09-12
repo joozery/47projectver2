@@ -4,6 +4,13 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Printer, Download, Edit2, Save, X } from 'lucide-react';
 
+// Import images
+import pressuredownImg from '../assets/pressuredown.jpg';
+import speedupImg from '../assets/speedup.jpg';
+import flowdownImg from '../assets/flowdown.jpg';
+import waterdownImg from '../assets/waterdown.jpg';
+import cementupImg from '../assets/cementup.jpg';
+
 const SoilCementReport = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [drillingTimer, setDrillingTimer] = useState('00:00:00');
@@ -888,7 +895,7 @@ const SoilCementReport = () => {
               <h3 className="text-lg font-semibold text-orange-800 mb-4 text-center print:text-base print:mb-2 print:text-orange-900">Pressure (Bar.) ↓</h3>
               <div className="h-48 relative print:h-24 pb-1">
                 <img 
-                  src="/src/assets/pressuredown.jpg" 
+                  src={pressuredownImg} 
                   alt="Pressure Chart" 
                   className="w-full h-full object-contain rounded-lg"
                 />
@@ -1061,7 +1068,7 @@ const SoilCementReport = () => {
               <h3 className="text-lg font-semibold text-green-800 mb-4 text-center print:text-base print:mb-2 print:text-green-900">Speed (M/Min) ↑</h3>
               <div className="h-48 relative print:h-24 pb-1">
                 <img 
-                  src="/src/assets/speedup.jpg" 
+                  src={speedupImg} 
                   alt="Speed Chart" 
                   className="w-full h-full object-contain rounded-lg"
                 />
@@ -1075,7 +1082,7 @@ const SoilCementReport = () => {
               <h3 className="text-lg font-semibold text-yellow-800 mb-4 text-center print:text-base print:mb-2 print:text-yellow-900">Flow (L/Min) ↓</h3>
               <div className="h-48 relative print:h-24 pb-1">
                 <img 
-                  src="/src/assets/flowdown.jpg" 
+                  src={flowdownImg} 
                   alt="Flow Chart" 
                   className="w-full h-full object-contain rounded-lg"
                 />
@@ -1128,7 +1135,7 @@ const SoilCementReport = () => {
               <h3 className="text-lg font-semibold text-purple-800 mb-4 text-center print:text-base print:mb-2 print:text-purple-900">Water Volume (Liter) ↓</h3>
               <div className="h-48 relative print:h-24 pb-1">
                 <img 
-                  src="/src/assets/waterdown.jpg" 
+                  src={waterdownImg} 
                   alt="Water Volume Chart" 
                   className="w-full h-full object-contain rounded-lg"
                 />
@@ -1139,7 +1146,7 @@ const SoilCementReport = () => {
               <h3 className="text-lg font-semibold text-red-800 mb-4 text-center print:text-base print:mb-2 print:text-red-900">Cement Volume (Liter) ↑</h3>
               <div className="h-48 relative print:h-24 pb-1">
                 <img 
-                  src="/src/assets/cementup.jpg" 
+                  src={cementupImg} 
                   alt="Cement Volume Chart" 
                   className="w-full h-full object-contain rounded-lg"
                 />
