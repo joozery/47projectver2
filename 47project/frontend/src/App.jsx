@@ -1,12 +1,18 @@
 import { useState } from 'react'
 import { Button } from './components/ui/button'
 import SoilCementReport from './components/SoilCementReport'
+import Maintenance from './components/Maintenance'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [showReport, setShowReport] = useState(false)
+  const [maintenanceMode, setMaintenanceMode] = useState(true) // Set to true to show maintenance page
+
+  if (maintenanceMode) {
+    return <Maintenance />
+  }
 
   if (showReport) {
     return <SoilCementReport />
