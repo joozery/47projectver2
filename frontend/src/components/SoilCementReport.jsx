@@ -893,12 +893,40 @@ const SoilCementReport = () => {
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 print:grid-cols-2 print:gap-4">
             <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200 print:bg-white print:border-2 print:p-3 print:rounded-lg">
               <h3 className="text-lg font-semibold text-orange-800 mb-4 text-center print:text-base print:mb-2 print:text-orange-900">Pressure (Bar.) ↓</h3>
-              <div className="h-48 relative print:h-24 pb-1">
-                <img 
-                  src={pressuredownImg} 
-                  alt="Pressure Chart" 
-                  className="w-full h-full object-contain rounded-lg"
-                />
+              <div className="bg-white rounded-lg p-4 print:shadow-none print:border print:p-2">
+                <div className="h-40 relative print:h-20">
+                  {/* Y-axis labels */}
+                  <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-600 print:text-xs">
+                    <span>400</span>
+                    <span>200</span>
+                    <span>0</span>
+                  </div>
+                  {/* X-axis labels */}
+                  <div className="absolute bottom-0 left-8 right-0 flex justify-between text-xs text-gray-600 print:text-xs">
+                    <span>0.0</span>
+                    <span>2.5</span>
+                    <span>5.0</span>
+                    <span>7.5</span>
+                    <span>10.0</span>
+                  </div>
+                  {/* Area Chart */}
+                  <svg className="w-full h-full print:w-full print:h-full" viewBox="0 0 400 160">
+                    <defs>
+                      <linearGradient id="pressureGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#f97316" stopOpacity="0.8"/>
+                        <stop offset="100%" stopColor="#f97316" stopOpacity="0.3"/>
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d={`M 0 160 ${graphData.pressure.map((point) => 
+                        `L ${point.x * 40} ${160 - (point.y / 400) * 160}`
+                      ).join(' ')} L 400 160 Z`}
+                      fill="url(#pressureGradient1)"
+                      stroke="#f97316"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
             
@@ -1080,12 +1108,40 @@ const SoilCementReport = () => {
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 print:grid-cols-2 print:gap-4">
             <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 border border-yellow-200 print:bg-white print:border-2 print:p-3 print:rounded-lg">
               <h3 className="text-lg font-semibold text-yellow-800 mb-4 text-center print:text-base print:mb-2 print:text-yellow-900">Flow (L/Min) ↓</h3>
-              <div className="h-48 relative print:h-24 pb-1">
-                <img 
-                  src={flowdownImg} 
-                  alt="Flow Chart" 
-                  className="w-full h-full object-contain rounded-lg"
-                />
+              <div className="bg-white rounded-lg p-4 print:shadow-none print:border print:p-2">
+                <div className="h-40 relative print:h-20">
+                  {/* Y-axis labels */}
+                  <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-600 print:text-xs">
+                    <span>400</span>
+                    <span>200</span>
+                    <span>0</span>
+                  </div>
+                  {/* X-axis labels */}
+                  <div className="absolute bottom-0 left-8 right-0 flex justify-between text-xs text-gray-600 print:text-xs">
+                    <span>0.0</span>
+                    <span>2.5</span>
+                    <span>5.0</span>
+                    <span>7.5</span>
+                    <span>10.0</span>
+                  </div>
+                  {/* Area Chart */}
+                  <svg className="w-full h-full print:w-full print:h-full" viewBox="0 0 400 160">
+                    <defs>
+                      <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#eab308" stopOpacity="0.8"/>
+                        <stop offset="100%" stopColor="#eab308" stopOpacity="0.3"/>
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d={`M 0 160 ${graphData.flow.map((point) => 
+                        `L ${point.x * 40} ${160 - (point.y / 400) * 160}`
+                      ).join(' ')} L 400 160 Z`}
+                      fill="url(#flowGradient1)"
+                      stroke="#eab308"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
             
