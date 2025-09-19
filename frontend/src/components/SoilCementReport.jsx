@@ -4,10 +4,8 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Printer, Download, Edit2, Save, X } from 'lucide-react';
 
-// Import images
-import pressuredownImg from '../assets/pressuredown.jpg';
+// Import images (only those still used)
 import speedupImg from '../assets/speedup.jpg';
-import flowdownImg from '../assets/flowdown.jpg';
 import waterdownImg from '../assets/waterdown.jpg';
 import cementupImg from '../assets/cementup.jpg';
 
